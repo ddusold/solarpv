@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+  <head>
+    <title>Dashboard Portal</title>
+
+    <link href="{% static 'register/register.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header-container">
+        <div class="nav">
+          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'register' %}">Register</a>
+        </div>
+      </div>
+      <div class="body-wrapper">
+        <form class="register-form" method="POST" action="{% url 'register' %}">
+          <h3>Dashboard Data Entry</h3>
+          <div class="form-row">
+            <label>Client</label>
+            {{ form.client }}
+          </div>
+          <div class="form-row">
+            <label>Location</label>
+            {{ form.location }}
+          </div>
+          <div class="form-row">
+            <label>Product</label>
+            {{ form.product }}
+          </div>
+          <div class="form-row">
+            <label>Test Standard</label>
+            {{ form.test_standard }}
+          </div>
+          <div class="form-row">
+            <label>Certificate</label>
+            {{ form.certificate }}
+          </div>
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

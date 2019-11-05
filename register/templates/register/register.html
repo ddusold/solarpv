@@ -1,0 +1,56 @@
+{% load static %}
+<html>
+  <head>
+    <title>Register</title>
+
+    <link href="{% static 'register/register.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header-container">
+        <div class="nav">
+          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'dashboard' %}">Dashboard</a>
+        </div>
+      </div>
+      <div class="body-wrapper">
+        <form class="register-form" method="POST" action="{% url 'register' %}">
+          <h3>Register with us.</h3>
+          <div class="form-row">
+            <label>Username</label>
+            {{ form.username }}
+          </div>
+          <div class="form-row">
+            <label>Password</label>
+            {{ form.password }}
+          </div>
+          <div class="form-row">
+            <label>First Name</label>
+            {{ form.first_name }}
+          </div>
+          <div class="form-row">
+            <label>Middle Name</label>
+            {{ form.middle_name }}
+          </div>
+          <div class="form-row">
+            <label>Last Name</label>
+            {{ form.last_name }}
+          </div>
+          <div class="form-row">
+            <label>Address</label>
+            {{ form.address }}
+          </div>
+          <div class="form-row">
+            <label>Phone</label>
+            {{ form.phone }}
+          </div>
+          <div class="form-row">
+            <label>Email</label>
+            {{ form.email }}
+          </div>
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
