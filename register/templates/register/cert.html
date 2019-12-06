@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+  <head>
+    <title>Training & Certification</title>
+
+    <link href="{% static 'register/register.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header-container">
+        <div class="nav">
+          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'register' %}">Register</a>
+          <a href="{% url 'dashboard' %}">Dashboard</a>
+        </div>
+      </div>
+      <div class="body-wrapper">
+        <form class="search-form" method="POST" action="">
+          {% csrf_token %}
+          <h3>Training & Certification</h3>
+          <h4>Search For A Certification</h4>
+          <div class="form-row">
+            <label>Certificate</label>
+            {{ form.search_term }}
+          </div>
+          <br />
+          <input type="submit" />
+        </form>
+      </div>
+      <div>{% autoescape off %} {{ data }} {% endautoescape %}</div>
+    </div>
+  </body>
+</html>

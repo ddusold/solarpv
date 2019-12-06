@@ -31,3 +31,9 @@ class DashboardForm(forms.Form):
         max_length=20, widget=forms.TextInput(attrs={'class': 'form-input'}))
     certificate = forms.CharField(
         max_length=20, widget=forms.TextInput(attrs={'class': 'form-input'}))
+
+
+class CertificationSearchForm(forms.Form):
+    search_term = forms.CharField(
+        max_length=20, widget=forms.TextInput(attrs={'class': 'form-input'})
+    )
